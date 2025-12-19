@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        /* Full-page background */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            position: relative;
+        }
+
+        /* Top-left 3D Logo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(145deg, #ff512f, #dd2476);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            transform: rotateX(5deg) rotateY(3deg);
+        }
+
+        /* Form container */
+        .form-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7f50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top-left logo -->
+    <div class="logo">Testers</div>
+
+    <!-- Centered form -->
+    <div class="form-container">
+        <h2>User Registration</h2>
+        <form action="submit.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+

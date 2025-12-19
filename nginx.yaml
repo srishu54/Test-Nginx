@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: test
+spec:
+  replicas: 1
+  selector: 
+   matchLables:
+    app: nginx
+  template:
+   metadata:
+    labels:
+     app: nginx
+   spec:
+    containers:
+   - name: nginx
+     image: srishu54/nginx:BUILD_NUMBER
+     ports:
+      - containerPort: 80
