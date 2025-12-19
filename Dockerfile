@@ -1,23 +1,23 @@
-FROM ubuntu:22.04
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM centos:9
 
 ARG HTTP_PROXY=http://10.10.13.207:3128
 ARG HTTPS_PROXY=http://10.10.13.207:3128
 
-RUN apt update && apt install -y \
-    nginx \
-    php-fpm \
-    php-mysql \
-    && rm -rf /var/lib/apt/lists/*
+RUN dnf -y update && \
+    dnf -y install \
+        nginx \
+        php \
+        php-fpm \
+        php-mysqlnd \
+    && dnf clean all
 
 COPY nginx.conf /etc/nginx/sites-available/default
 COPY index.html /var/www/html/
 COPY submit.php /var/www/html/
 
-RUN chown -R www-data:www-data /var/www/html
+RUN chown -R nginx:nginx /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD service php8.1-fpm start && nginx -g 'daemon off;'
+CMD php-fpm && nginx -g 'daemon off;'
 
