@@ -4,7 +4,7 @@ metadata:
   name: ng-service
   namespace: test
 spec:
-  type: nodeport
+  type: NodePort
   selector:
    app: nginx
   ports:
