@@ -2,6 +2,9 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+ARG HTTP_PROXY=http://10.10.13.207:3128
+ARG HTTPS_PROXY=http://10.10.13.207:3128
+
 RUN apt update && apt install -y \
     nginx \
     php-fpm \
