@@ -1,4 +1,4 @@
-FROM centos:9
+FROM rockylinux:9
 
 ARG HTTP_PROXY=http://10.10.13.207:3128
 ARG HTTPS_PROXY=http://10.10.13.207:3128
