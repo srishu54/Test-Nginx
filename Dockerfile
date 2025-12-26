@@ -10,14 +10,22 @@ RUN dnf -y update && \
         php-fpm \
         php-mysqlnd \
     && dnf clean all
+        php-mysqlnd && \
+    dnf clean all
 
-COPY nginx.conf /etc/nginx/sites-available/default
-COPY index.html /var/www/html/
-COPY submit.php /var/www/html/
+# Create PHP-FPM runtime directory (CRITICAL FIX)
+RUN mkdir -p /run/php-fpm && \
+    chown -R nginx:nginx /run/php-fpm
+
+# Copy configs and app files
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html/
+COPY submit.php /usr/share/nginx/html/
 
 RUN chown -R nginx:nginx /usr/share/nginx/html
 
 EXPOSE 80
 
+# Start both services
 CMD php-fpm && nginx -g 'daemon off;'
 
