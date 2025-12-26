@@ -9,7 +9,6 @@ RUN dnf -y update && \
         php \
         php-fpm \
         php-mysqlnd \
-    && dnf clean all
         php-mysqlnd && \
     dnf clean all
 
