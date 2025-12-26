@@ -3,7 +3,7 @@
 
 A simple web application that serves a user registration form using Nginx, processes form submissions with PHP-FPM, and stores user data in MySQL.
 
-The MySQL database is automatically initialized with the required database and table on the first startup. The application is fully containerized using Docker and designed to run in a Kubernetes cluster, making it easy to deploy, scale, and manage.
+The MySQL database is automatically initialized with the required database and table on the first startup. The application is designed to run in a Kubernetes cluster, making it easy to deploy, scale, and manage.
 
 Features
 
