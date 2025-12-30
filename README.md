@@ -1,16 +1,37 @@
-
 # Nginx-PHP-MySQL User Registration App
 
-A simple web application that serves a user registration form using Nginx, processes form submissions with PHP-FPM, and stores user data in MySQL.
+A multi-tier web application demonstrating containerization, Kubernetes orchestration, and CI/CD pipeline integration.
 
-The MySQL database is automatically initialized with the required database and table on the first startup. The application is designed to run in a Kubernetes cluster, making it easy to deploy, scale, and manage.
+## Technology Stack
+- Web Server: Nginx
+- Backend: PHP-FPM
+- Database: MySQL
+- Containerization: Docker
+- Orchestration: Kubernetes (local cluster)
+- CI/CD: Jenkins freestyle project
+- GitHub: [link]
+- Docker Hub: [link]
 
-**Features**
+## Architecture
+[User] → [Nginx POD] → [PHP-FPM POD] → [MySQL POD]
+- Nginx POD handles HTTP requests
+- PHP-FPM POD processes backend
+- MySQL POD stores user data
 
-Responsive HTML/CSS registration form
+## Deployment Steps
+1. Build Docker images for Nginx, PHP, MySQL using Jenkins freestyle project
+2. Push images to Docker Hub
+3. Apply Kubernetes manifests:
+4. Access application via NodePort
 
-PHP backend to handle form submissions
+## Features
+- Responsive HTML/CSS registration form
+- PHP backend for form submissions
+- MySQL database initialization
+- Kubernetes deployment for scalability and orchestration
 
-MySQL storage with automatic database and table creation
-
-Designed for Kubernetes, enabling easy orchestration and management
+## Learning Outcomes
+- Hands-on Docker image creation and container orchestration
+- Multi-tier application deployment on Kubernetes
+- CI/CD integration using Jenkins freestyle project
+- Experience with pod management, services, and Kubernetes manifests
